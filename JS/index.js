@@ -2,7 +2,6 @@
 let pointsNumber = 1000000;
 
 let insideCircle = 0;
-let outsideCircle = 0;
 const start = new Date().getTime();
 
 for (let i = 0; i < pointsNumber; i++) {
@@ -11,15 +10,13 @@ for (let i = 0; i < pointsNumber; i++) {
 
     if (x * x + y * y < 1) {
         insideCircle++;
-    } else {
-        outsideCircle++;
     }
     // console.clear()
     // console.log("Countdown", pointsNumber-i)
 }
 // console.clear()
 const finish = new Date().getTime()
-console.log("JS = ", (finish-start)/1000, "seconds for => insideCircle: ", insideCircle, " , outsideCircle: ", outsideCircle);
+console.log("JS = ", (finish-start)/1000, "seconds for => insideCircle: ", insideCircle);
 
 const pi = 4.0 * insideCircle / pointsNumber;
 console.log("JS = PI value with ", pointsNumber, " => ", pi);
