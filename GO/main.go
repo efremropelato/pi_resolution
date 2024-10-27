@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"strconv"
+	"os"
 )
 
 func main() {
-	pointsNumber := 1000000
+	pointsNumber, _ :=  strconv.Atoi(os.Getenv("PI_SIMULATIONS"))
 
 	insideCircle := 0
 	start := time.Now()

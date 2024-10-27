@@ -1,5 +1,5 @@
 
-let pointsNumber = 1000000;
+let pointsNumber = parseInt(process.env.PI_SIMULATIONS);
 
 let insideCircle = 0;
 const start = new Date().getTime();

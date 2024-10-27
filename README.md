@@ -14,65 +14,74 @@
 
 ### Confronto efficienza
 
-Utilizzando Python, Ruby, Nodejs, Golang e Rust sono stati implementati quattro script con lo stesso algoritmo di risoluzione del valore di $\Pi$.
+Utilizzando Python, Ruby, Nodejs, Golang e Rust sono stati implementati quattro script con lo stesso algoritmo di risoluzione del valore di $\Pi$: per nessuno di essi è stato utilizzato parallelismi o multithreading per ottimizzazione delle prestazioni.
 Alla fine dell'esecuzione, ogni script restituisce il tempo complessivo dell'elaborazione.
 
 ### Esecuzione
 
-E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh` o `run.bat`, oppure eseguirli singolarmente con:
+E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh <numero interazioni>` o `run.bat <numero interazioni>`, oppure eseguirli singolarmente con:
 
 - Python
 
   ```sh
+  export PI_SIMULATIONS=<numero interazione>
   python3 ./PY/main.py
   ```
 
 - Ruby
 
   ```sh
+  export PI_SIMULATIONS=<numero interazione>
   ruby ./RB/main.rb
   ```
 
 - Nodejs
 
   ```sh
+  export PI_SIMULATIONS=<numero interazione>
   node ./JS/index.js
   ```
 
 - Go
 
   ```sh
-  go run ./GO/main.go
+  go build -o ./GO/main ./GO/main.go
+  export PI_SIMULATIONS=<numero interazione>
+  ./GO/main
   ```
 
 - Rust
 
-```sh
-cd RS
-cargo build --release -q
-./target/release/main
-```
+  ```sh
+  cd RS
+  cargo build --release -q
+  export PI_SIMULATIONS=<numero interazione>
+  ./target/release/main
+  ```
 
 ### Risultati
 
 Utilizzando un MACBook Air con processore M2 e 16Gb, i risultati con 1000000 iterazioni sono:
 
 ```sh
-PY = 0.243138 seconds for => inside_circle: 784925
-PY = PI value with 1000000 => 3.139700
+# ./run.sh 1000000
+
+PY = 0.230278 seconds for => inside_circle: 785422
+PY = PI value with 1000000 => 3.141688
 -------------------------------------------------
-RB = 1.036472 seconds for => inside_circle: 785964
-RB = PI value with 1000000 => 3.143856
+RB = 1.010184 seconds for => inside_circle: 785856
+RB = PI value with 1000000 => 3.143424
 -------------------------------------------------
-JS =  0.039 seconds for => insideCircle:  785185
-JS = PI value with  1000000  =>  3.14074
+JS =  0.042 seconds for => insideCircle:  785553
+JS = PI value with  1000000  =>  3.142212
 -------------------------------------------------
-GO = 0.027645 seconds for => insideCircle: 786015
-GO = PI value with 1000000 => 3.144060
+GO = 0.026024 seconds for => insideCircle: 784907
+GO = PI value with 1000000 => 3.139628
 -------------------------------------------------
-Rust = 0.053900166 seconds for => inside_circle: 785279
-Rust = PI value with 1000000 => 3.141116
+Rust = 0.045973375 seconds for => inside_circle: 785296
+Rust = PI value with 1000000 => 3.141184
 -------------------------------------------------
+
 ```
 
 ### Algoritmo per risoluzione $\Pi$
