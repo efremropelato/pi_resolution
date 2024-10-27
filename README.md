@@ -1,6 +1,6 @@
 # Metodo Montecarlo
 
-## Benchmarking, tra Python, Ruby, Nodejs, Golang e Rust, per la risoluzione del valore di $\Pi$ utilizzando il metodo Monte Carlo.
+## Benchmarking, tra Python, Ruby, Nodejs, Golang, Java e Rust, per la risoluzione del valore di $\Pi$ utilizzando il metodo Monte Carlo.
 
 > ### Prerequisiti
 >
@@ -11,10 +11,11 @@
 > - Nodejs ver. 20.18.0 o successiva
 > - Golang ver. 1.22.4 o successiva
 > - Rust ver. 1.82.0 o successiva
+> - Java ver. 1.8.0_422 o successiva
 
 ### Confronto efficienza
 
-Utilizzando Python, Ruby, Nodejs, Golang e Rust sono stati implementati quattro script con lo stesso algoritmo di risoluzione del valore di $\Pi$: per nessuno di essi è stato utilizzato parallelismi o multithreading per ottimizzazione delle prestazioni.
+Utilizzando Python, Ruby, Nodejs, Golang, Java e Rust sono stati implementati quattro script con lo stesso algoritmo di risoluzione del valore di $\Pi$: per nessuno di essi è stato utilizzato parallelismi o multithreading per ottimizzazione delle prestazioni.
 Alla fine dell'esecuzione, ogni script restituisce il tempo complessivo dell'elaborazione.
 
 ### Esecuzione
@@ -57,7 +58,15 @@ E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh <n
   cargo build --release -q
   export PI_SIMULATIONS=<numero interazione>
   ./target/release/main
-  ```
+
+- Java
+
+  ```sh
+  cd JV
+  javac ./Main.java
+  export PI_SIMULATIONS=<numero interazione>
+  java Main && cd ..
+  ``` ```
 
 ### Risultati
 
