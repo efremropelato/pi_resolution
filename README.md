@@ -58,6 +58,7 @@ E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh <n
   cargo build --release -q
   export PI_SIMULATIONS=<numero interazione>
   ./target/release/main
+  ```
 
 - Java
 
@@ -67,31 +68,20 @@ E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh <n
   export PI_SIMULATIONS=<numero interazione>
   java Main && cd ..
   ``` ```
+  ```
 
 ### Risultati
 
-Utilizzando un MACBook Air con processore M2 e 16Gb, i risultati con 1000000 iterazioni sono:
+Utilizzando un Intel® Core™ i5-6500 e 32Gb, i risultati, misurati in secondi, sono:
 
-```sh
-# ./run.sh 1000000
-
-PY = 0.230278 seconds for => inside_circle: 785422
-PY = PI value with 1000000 => 3.141688
--------------------------------------------------
-RB = 1.010184 seconds for => inside_circle: 785856
-RB = PI value with 1000000 => 3.143424
--------------------------------------------------
-JS =  0.042 seconds for => insideCircle:  785553
-JS = PI value with  1000000  =>  3.142212
--------------------------------------------------
-GO = 0.026024 seconds for => insideCircle: 784907
-GO = PI value with 1000000 => 3.139628
--------------------------------------------------
-Rust = 0.045973375 seconds for => inside_circle: 785296
-Rust = PI value with 1000000 => 3.141184
--------------------------------------------------
-
-```
+|            | ver.        | 1.000                   | 5.000                  | 1.000.000              | 5.000.000                |
+| ----------:|:-----------:|:-----------------------:|:----------------------:|:----------------------:|:------------------------:|
+| **Python** | *3.12.4*    | 0,00017 [739,13%]       | 0,000806 [680,92%]     | 0,171172 [1022,83%]    | 0,871845 [936,66%]       |
+| **Ruby**   | *3.3.5*     | 0,003380644 [14698,45%] | 0,01664606 [14062,85%] | 3,185276161 [19033,5%] | 16,004425921 [17194,31%] |
+| **Nodejs** | *20.18.0*   | 0,00021 [913,04%]       | 0,001 [844,81%]        | 0,03 [179,26%]         | 0,135 [145,03%]          |
+| **Golang** | *1.22.4*    | **0,000023 [100%]**     | 0,000132 [111,51%]     | 0,022069 [131,87%]     | 0,119983 [128,9%]        |
+| **Rust**   | *1.82.0*    | 0,000030641 [133,22%]   | **0,000118369 [100%]** | **0,016735104 [100%]** | **0,093079769 [100%]**   |
+| **Java**   | *1.8.0_422* | 0,001604 [6973,91%]     | 0,004325 [3653,82%]    | 0,050392 [301,11%]     | 0,224448 [241,13%]       |
 
 ### Algoritmo per risoluzione $\Pi$
 
