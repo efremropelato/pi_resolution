@@ -19,4 +19,11 @@ if exist ./RS/target/release/main.exe (
     ./RS/target/release/main.exe
 )
 
+cd JV
+javac ./Main.java
+if exist ./Main.class (
+    java Main
+)
+cd ..
+
 pause
