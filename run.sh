@@ -8,4 +8,7 @@ node ./JS/index.js && \
 go build -o ./GO/main ./GO/main.go && \
 ./GO/main && \
 cd RS && cargo build --release -q && cd .. && \
-./RS/target/release/main
+./RS/target/release/main && \
+cd JV && javac ./Main.java && \
+java Main && \
+cd ..
