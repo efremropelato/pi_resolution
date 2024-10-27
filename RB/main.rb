@@ -1,7 +1,7 @@
 require 'securerandom'
 require 'time'
 
-points_number = 1_000_000
+points_number = ENV['PI_SIMULATIONS'].to_i
 
 inside_circle = 0
 start = Time.now

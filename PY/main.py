@@ -3,7 +3,7 @@ import random
 import os
 
 def main():
-    points_number = 1000000
+    points_number = int(os.environ['PI_SIMULATIONS'])
 
     inside_circle = 0
     start = time.time()

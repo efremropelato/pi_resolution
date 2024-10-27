@@ -1,8 +1,9 @@
 use rand::Rng;
 use std::time::Instant;
+use std::env;
 
 fn main() {
-    let points_number = 1_000_000;
+    let points_number = env::var("PI_SIMULATIONS").expect("REASON").parse().unwrap();
     let mut inside_circle = 0;
 
     let start = Instant::now();
