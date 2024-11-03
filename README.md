@@ -70,6 +70,10 @@ E' possibile eseguire tutti gli script in seguenza, tramite lo script `run.sh <n
   ``` ```
   ```
 
+#### Hyperfine
+
+Per eseguire `./hyperfine.sh`, si deve installare il binario: [Hyperfine installation](https://github.com/sharkdp/hyperfine/tree/master?tab=readme-ov-file#installation)
+
 ### Risultati
 
 Utilizzando un **Intel® Core™ i5-6500 e 32Gb** i risultati, misurati in secondi, sono:
