@@ -12,16 +12,3 @@ hyperfine --shell zsh --warmup 5 --runs 10 \
 "./RS/target/release/main " \
 "cd JV && java Main && cd .." \
 --export-markdown ./banchmark.md
-# -- --conclude "cd .." \
-# --prepare "cd JV && javac ./Main.java" \
-# "java Main" \
-# -- --conclude "cd .." \
-
-
-# go build -o ./GO/main ./GO/main.go && \
-# ./GO/main && \
-# cd RS && cargo build --release -q && cd .. && \
-# ./RS/target/release/main && \
-# cd JV && javac ./Main.java && \
-# java Main && \
-# cd ..
